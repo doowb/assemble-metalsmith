@@ -37,9 +37,12 @@
     "test": "mocha -R spec"
   },
   "devDependencies": {
-    "verb": "~0.2.6",
+    "assemble": "git://github.com/assemble/assemble#v0.6.0",
     "chai": "~1.9.1",
-    "mocha": "*"
+    "mocha": "^1.21.3",
+    "rimraf": "^2.2.8",
+    "should": "^4.0.4",
+    "verb": "~0.2.6"
   },
   "dependencies": {
     "gulp-util": "^3.0.0",

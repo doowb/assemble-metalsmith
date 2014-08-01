@@ -22,34 +22,30 @@ module.exports = function (assemble) {
 
   function machinistPlugin() {
     return through.obj(function (file, encoding, callback) {
-      this.push(file);
       return callback();
     }, function (callback) {
 
       // keep a reference to the stream
       var stream = this;
-      try {
-        // initialize an adapter for metalsmith
-        var adapter = new Adapter(assemble);
 
-        // run all the registered middleware
-        ware.run(adapter.files(), adapter, function (err, files) {
-          if (err) {
-            stream.emit('error', new gutil.PluginError('assemble-machinist', err));
-            return callback();
-          }
+      // initialize an adapter for metalsmith
+      var adapter = new Adapter(assemble);
 
-          // restore the files and push them through the stream
-          adapter.files(files);
-          assemble.files.forEach(function (file) {
-            stream.push(file);
-          });
+      // run all the registered middleware
+      ware.run(adapter.files(), adapter, function (err, files) {
+        if (err) {
+          stream.emit('error', new gutil.PluginError('assemble-machinist', err));
           return callback();
-        })
-      } catch (err) {
-        this.emit('error', new gutil.PluginError('assemble-machinist', err));
-      }
-      return callback();
+        }
+
+        // restore the files and push them through the stream
+        adapter.files(files);
+        assemble.files.forEach(function (file) {
+          stream.push(file);
+        });
+        return callback();
+      })
+
     });
   };
 
