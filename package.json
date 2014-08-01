@@ -42,7 +42,8 @@
     "mocha": "^1.21.3",
     "rimraf": "^2.2.8",
     "should": "^4.0.4",
-    "verb": "~0.2.6"
+    "verb": "~0.2.6",
+    "verb-tag-jscomments": "^0.1.4"
   },
   "dependencies": {
     "gulp-util": "^3.0.0",
