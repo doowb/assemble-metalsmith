@@ -40,5 +40,10 @@
     "verb": "~0.2.6",
     "chai": "~1.9.1",
     "mocha": "*"
+  },
+  "dependencies": {
+    "gulp-util": "^3.0.0",
+    "through2": "^0.5.1",
+    "ware": "^0.3.0"
   }
 }
