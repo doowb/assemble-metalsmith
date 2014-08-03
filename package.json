@@ -1,23 +1,23 @@
 {
-  "name": "assemble-machinist",
-  "description": "Assemble plugin that can run any metalsmith middlewares.",
+  "name": "assemble-metalsmith",
+  "description": "Assemble v0.6.x plugin for running any metalsmith middlewares",
   "version": "0.1.0",
-  "homepage": "https://github.com/doowb/assemble-machinist",
+  "homepage": "https://github.com/doowb/assemble-metalsmith",
   "author": {
     "name": "Brian Woodward",
     "url": "https://github.com/doowb"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/doowb/assemble-machinist.git"
+    "url": "git://github.com/doowb/assemble-metalsmith.git"
   },
   "bugs": {
-    "url": "https://github.com/doowb/assemble-machinist/issues"
+    "url": "https://github.com/doowb/assemble-metalsmith/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/doowb/assemble-machinist/blob/master/LICENSE-MIT"
+      "url": "https://github.com/doowb/assemble-metalsmith/blob/master/LICENSE-MIT"
     }
   ],
   "keywords": [

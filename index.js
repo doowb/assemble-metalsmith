@@ -20,7 +20,7 @@ module.exports = function (assemble) {
   * Assemble plugin to run metalsmith middleware
   */
 
-  function machinistPlugin() {
+  function metalsmithPlugin() {
     return through.obj(function (file, encoding, callback) {
       return callback();
     }, function (callback) {
@@ -34,7 +34,7 @@ module.exports = function (assemble) {
       // run all the registered middleware
       ware.run(adapter.files(), adapter, function (err, files) {
         if (err) {
-          stream.emit('error', new gutil.PluginError('assemble-machinist', err));
+          stream.emit('error', new gutil.PluginError('assemble-metalsmith', err));
           return callback();
         }
 
@@ -59,10 +59,10 @@ module.exports = function (assemble) {
    * @return {Object} this for chaining
    */
   
-  machinistPlugin.use = function (middleware) {
+  metalsmithPlugin.use = function (middleware) {
     ware.use(middleware);
     return this;
   };
 
-  return machinistPlugin;
+  return metalsmithPlugin;
 };

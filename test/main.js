@@ -14,13 +14,13 @@ var assemble = require('assemble');
 var plugin = require('..');
 var outpath = path.join(__dirname, './out-fixtures');
 
-describe('machinist', function () {
+describe('metalsmithPlugin', function () {
   var instance = null;
-  var machinist = null;
+  var metalsmithPlugin = null;
 
   beforeEach(function (done) {
     instance = assemble.create();
-    machinist = plugin(instance);
+    metalsmithPlugin = plugin(instance);
     rimraf(outpath, done);
   });
   afterEach(function (done) {
@@ -28,7 +28,7 @@ describe('machinist', function () {
   });
 
   it('should return a stream', function (done) {
-    var stream = machinist();
+    var stream = metalsmithPlugin();
     should.exist(stream);
     should.exist(stream.on);
     done();
@@ -36,7 +36,7 @@ describe('machinist', function () {
 
   it('should run one middleware', function (done) {
     var called = 0;
-    machinist
+    metalsmithPlugin
       .use(function (files, metalsmith, callback) {
         called++;
         files.forEach(function (file) {
@@ -49,7 +49,7 @@ describe('machinist', function () {
     var outstream = instance.dest(outpath);
 
     instream
-      .pipe(machinist())
+      .pipe(metalsmithPlugin())
       .pipe(outstream);
 
     outstream.on('error', done);
@@ -70,7 +70,7 @@ describe('machinist', function () {
       callback();
     };
 
-    machinist
+    metalsmithPlugin
       .use(middleware)
       .use(middleware)
       .use(middleware)
@@ -81,7 +81,7 @@ describe('machinist', function () {
     var outstream = instance.dest(outpath);
 
     instream
-      .pipe(machinist())
+      .pipe(metalsmithPlugin())
       .pipe(outstream);
 
     outstream.on('error', done);
