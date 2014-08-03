@@ -15,7 +15,7 @@ module.exports = function (assemble) {
   var ware = new Ware();
 
   /**
-  * ## Machinist plugin
+  * ## Metalsmith plugin
   *
   * Assemble plugin to run metalsmith middleware
   */

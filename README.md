@@ -28,7 +28,7 @@ assemble.src('path/to/pages/*.hbs')
 ```
 
 ## API
-### Machinist plugin
+### Metalsmith plugin
 
 Assemble plugin to run metalsmith middleware
   
