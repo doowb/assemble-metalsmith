@@ -5,6 +5,7 @@
 
 'use strict';
 
+var _ = require('lodash');
 var path = require('path');
 var assert = require('assert');
 var should = require('should');
@@ -39,8 +40,8 @@ describe('metalsmithPlugin', function () {
     metalsmithPlugin
       .use(function (files, metalsmith, callback) {
         called++;
-        files.forEach(function (file) {
-          file.data.title = (file.data.title || '').toUpperCase();
+        _.forOwn(files, function (file) {
+          file.title = (file.title || '').toUpperCase();
         });
         callback();
       });
