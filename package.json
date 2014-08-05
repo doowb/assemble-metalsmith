@@ -1,7 +1,7 @@
 {
   "name": "assemble-metalsmith",
   "description": "Assemble v0.6.x plugin for running any metalsmith middlewares",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/doowb/assemble-metalsmith",
   "author": {
     "name": "Brian Woodward",
